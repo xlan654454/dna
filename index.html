@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>una carta vitual para mi niña 🐯  </title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+
+  background: linear-gradient(-45deg, #c77ac7, #602fbb, #6ccf8d, #ffdde1);
+  background-size: 400% 400%;
+  animation: fondoAnimado 10s ease infinite;
+}
+
+@keyframes fondoAnimado {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.pagina {
+  display: none;
+  padding: 50px;
+  animation: aparecer 5s;
+}
+
+.activa {
+  display: block;
+}
+
+@keyframes aparecer {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+button {
+  padding: 12px 25px;
+  margin: 20px;
+  border: none;
+  background: #ff4b5c;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button:hover {
+  background: #ff1e3c;
+}
+
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 15px;
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.galeria img:hover {
+  transform: scale(1.1);
+}
+
+
+.img-grande {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.img-grande img {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+
+.corazon {
+  position: fixed;
+  color: rgba(255,255,255,0.7);
+  animation: flotar 5s linear infinite;
+}
+
+@keyframes flotar {
+  0% {transform: translateY(100vh);}
+  100% {transform: translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div id="p1" class="pagina activa">
+  <h1> 💖  Mi niña, hice esta carta para ti, para que la distancia nunca sea un obstáculo
+para decirte cuánto te quiero. No hay cosa en este mundo que desee más que poder verte… 💖 </h1>
+
+  <p> espero que te guste 🦖 </p>
+  <button onclick="siguiente(2)">Entrar</button>
+</div>
+
+<div id="p2" class="pagina">
+  <h1>✨ Para una niña tan divertida, que llena de felicidad cada uno de mis días. Tal vez aún no lo sepas, pero te amo más de lo que imaginas.</h1>
+
+  <h2>Tu voz tan linda se volvió mi dopamina,
+tus llamadas son mi paz, mi melatonina.
+Quiero que siempre sepas, vida mía,
+que eres mi niña favorita… por toda la vida 💖 ...</h2>
+
+  <button onclick="siguiente(3)">Siguiente</button>
+</div>
+
+<div id="p3" class="pagina">
+  <h1> cada coasa que me cuentas la recuerdo  muy bien y nunca se me olvidara </h1>
+
+  <div class="galeria">
+    <img src="foto1.jpg" title="Dino habrazo💕">
+    <img src="foto2.jpg" title="una pequeña carta para ti  💖">
+    <img src="foto3.jpg" title=" quiero ser como los 3 kg de nutella en tu vida  💑">
+    <img src="foto4.jpg" title=" Te amo ❤️">
+  </div>
+
+  <button onclick="siguiente(4)">Siguiente</button>
+</div>
+
+<div id="p4" class="pagina">
+  <h1>💞 ya te quiero ver llenas los huecos de estas imagnes de citas contigo </h1>
+
+  <div class="galeria">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+    <img src="img4.jpg">
+    <img src="img5.jpg">
+    <img src="img6.jpg">
+  </div>
+
+  <button onclick="siguiente(5)">Final</button>
+</div>
+
+<div id="p5" class="pagina">
+  <h1>❤️ Te amo ❤️</h1>
+  <p>Gracias por estar conmigo... Por más noches dibujando en llamada,
+aunque el sueño nos venza y la voz se apague,
+yo me quedo contigo,
+en cada trazo, en cada detalle.
+
+Por más mensajes todos los días,
+aunque parezcan simples palabras,
+son pedacitos de ti
+que guardo en el alma.
+
+Por más audios, risas y silencios,
+por esas salidas que aún soñamos,
+por todos los planes a tu lado
+que poco a poco imaginamos.
+
+Y si algún día te enojas conmigo,
+prometo no soltar tu mano,
+porque incluso en tus enojos
+te sigo queriendo más de lo que explico.
+
+Quiero más de todo contigo,
+más tiempo, más historias, más momentos,
+porque si es a tu lado…
+todo vale el intento. 💖</p>
+
+  <br><br>
+
+  <a href="https://gifft.me/es/o/l/pjnfcndnh5qfaa8w0oyddlnj" class="boton" onclick="return pedirClave()">
+    💖 Haz click aquí 💖
+  </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+function siguiente(num) {
+  let paginas = document.querySelectorAll('.pagina');
+  paginas.forEach(p => p.classList.remove('activa'));
+  document.getElementById('p' + num).classList.add('activa');
+}
+
+
+setInterval(() => {
+  let corazon = document.createElement("div");
+  corazon.classList.add("corazon");
+  corazon.innerHTML = "💖";
+  corazon.style.left = Math.random() * 100 + "vw";
+  corazon.style.fontSize = Math.random() * 20 + 10 + "px";
+
+  document.body.appendChild(corazon);
+
+  setTimeout(() => {
+    corazon.remove();
+  }, 5000);
+}, 500);
+
+
+document.querySelectorAll('.galeria img').forEach(img => {
+  img.addEventListener('click', () => {
+    let visor = document.createElement("div");
+    visor.classList.add("img-grande");
+
+    visor.innerHTML = `<img src="${img.src}">`;
+
+    visor.onclick = () => visor.remove();
+
+    document.body.appendChild(visor);
+  });
+});
+
+
+
+
+</script>
+
+</body>
+</html>
